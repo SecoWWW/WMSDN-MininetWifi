@@ -19,8 +19,8 @@ def topology():
     sta1 = net.addStation('sta1', mac='00:00:00:00:00:11', position='1,1,0')
     sta2 = net.addStation('sta2', mac='00:00:00:00:00:12', position='31,11,0')
     ap1 = net.addAccessPoint('ap1', wlans=2, ssid='ssid1,', position='10,10,0')
-    ap2 = net.addAccessPoint('ap2', wlans=2, ssid='ssid2,', position='30,10,0')
-    ap3 = net.addAccessPoint('ap3', wlans=2, ssid='ssid3,', position='60,10,0')
+    ap2 = net.addAccessPoint('ap2', wlans=2, ssid='ssid2,', position='290,10,0')
+    ap3 = net.addAccessPoint('ap3', wlans=2, ssid='ssid3,', position='760,10,0')
     c0 = net.addController('c0', controller=RemoteController, ip='127.0.0.1', port=6633)
 
     info("*** Configuring wifi nodes\n")
@@ -39,6 +39,7 @@ def topology():
     c0.start()
     ap1.start([c0])
     ap2.start([c0])
+    ap3.start([c0])
 
     info("*** Running CLI\n")
     CLI_wifi(net)
