@@ -16,7 +16,8 @@ from mn_wifi.wmediumdConnector import interference
 
 def topology():
     "Create a network."
-    net = Mininet_wifi(link=wmediumd, wmediumd_mode=interference, controller=RemoteController)
+    #net = Mininet_wifi(link=wmediumd, wmediumd_mode=interference, controller=RemoteController)
+    net = Mininet_wifi(link=wmediumd, wmediumd_mode=interference)
 
     info("*** Creating nodes\n")    
     sta1 = net.addStation('sta1', position='10,10,0', range='100')
@@ -40,7 +41,7 @@ def topology():
 
     info("*** Starting network\n")
     net.build()
-    c1.start()
+    #c1.start()
 
     info("*** Running CLI\n")
     CLI_wifi(net)
