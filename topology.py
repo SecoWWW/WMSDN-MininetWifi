@@ -19,9 +19,9 @@ def topology():
     net = Mininet_wifi(link=wmediumd, wmediumd_mode=interference, controller=RemoteController)
 
     info("*** Creating nodes\n")    
-    sta1 = net.addStation('sta1', position='10,10,0')
-    sta2 = net.addStation('sta2', position='50,10,0')
-    sta3 = net.addStation('sta3', position='90,10,0')
+    sta1 = net.addStation('sta1', position='10,10,0', range='100')
+    sta2 = net.addStation('sta2', position='50,10,0', range='100')
+    sta3 = net.addStation('sta3', position='90,10,0', range='100')
     c1 = net.addController('c1', controller=RemoteController, ip='127.0.0.1', port=6653)
 
     net.setPropagationModel(model="logDistance", exp=4)
